@@ -1,218 +1,213 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alberto Andeliero</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alberto Andeliero, Software Engineer</title>
+  <meta name="description"
+    content="Alberto Andeliero, Software Engineer based in Padua, Italy. Java and Scala services for finance and banking, distributed systems and system integration.">
+  <meta name="author" content="Alberto Andeliero">
+  <link rel="canonical" href="https://andeliero.github.io/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Alberto Andeliero, Software Engineer">
+  <meta property="og:description"
+    content="Java and Scala services for finance and banking, distributed systems and system integration.">
+  <meta property="og:url" content="https://andeliero.github.io/">
+  <meta property="og:image" content="https://andeliero.github.io/photo.jpg">
+  <meta property="profile:first_name" content="Alberto">
+  <meta property="profile:last_name" content="Andeliero">
+  <meta name="twitter:card" content="summary">
+
+  <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230f6b4f'/><text x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23fff' text-anchor='middle'>A</text></svg>">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="p-5">
-  <div class="container px-3 px-lg-5">
-    <article>
-      <header class="resume-header">
-        <div class="row align-items-center">
-          <div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-            <h2 class="resume-name mb-0 text-uppercase">Alberto Andeliero</h2>
-            <div class="resume-tagline mb-3 mb-md-0">Software Developer</div>
-          </div>
-          <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
-            <ul class="list-unstyled mb-0">
-              <!--<li class="mb-2">
-                📞 <a class="resume-link" href="tel:+39 0000000000">+39 000 00 00 000</a>
-              </li>-->
-              <li class="mb-2">
-                ✉️ <a class="resume-link" href="mailto:andeliero92@gmail.com">andeliero92@gmail.com</a>
-              </li>
-              <li class="mb-2">
-                🌐 <a class="resume-link" href="https://linkedin.com/in/alberto-andeliero">linkedin.com/in/alberto-andeliero</a>
-              </li>
-              <li class="mb-0">
-                📍 Padua
-              </li>
-            </ul>
-          </div>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <article class="cv" id="main">
+
+    <header class="masthead">
+      <picture>
+        <source srcset="photo.avif" type="image/avif">
+        <source srcset="photo.webp" type="image/webp">
+        <img class="portrait" src="photo.jpg" alt="" width="200" height="200" decoding="async">
+      </picture>
+      <div class="identity">
+        <h1>Alberto Andeliero</h1>
+        <p class="role">Software Engineer</p>
+        <!-- <p class="pitch">
+          Tackle problems 
+        </p> -->
+        <ul class="contacts">
+          <li><a href="mailto:andeliero92@gmail.com">andeliero92@gmail.com</a></li>
+          <li><a href="https://linkedin.com/in/alberto-andeliero" rel="me">linkedin.com/in/alberto-andeliero</a></li>
+          <li><a href="https://github.com/andeliero" rel="me">github.com/andeliero</a></li>
+          <li>Padua, Italy</li>
+          <li class="print-hide"><a href="cv.pdf" download>Download PDF</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="experience">
+      <h2 id="experience">Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Software Engineer</h3>
+          <p class="org">Lunatech, The Netherlands</p>
+          <p class="when"><time datetime="2021">2021</time> &ndash; Present</p>
         </div>
-      </header>
-      <hr />
-      <div class="resume-intro py-3">
-        <div class="media flex-column flex-md-row align-items-center">
-          <img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto rounded-circle" src="photo.jpg"
-            alt="image" />
-          <div class="media-body text-left">
-            <p class="mb-0">
-              I'm a software developer and I have gained good experience in finance and business. I have a strong interest 
-              in developing backend services and solving problems related to them. I mainly have experience with Java development 
-              and Scala. Recently, I got interested in microservices and integration technologies such as Kafka and gRPC and I 
-              would like to apply this knowledge into practice by dealing with system integrations.
-            </p>
-          </div>
+        <p class="summary">
+          Developed a data processing platform that leverages microservices and APIs to expose various data from Audi
+           vehicles and includes a GDPR consent engine to manage drivers' privacy preferences.
+          Applied best practices for CI/CD, application containerization, and deployment, as well as managed cluster
+           configuration using Helm and Kustomize.
+
+          Possess a strong understanding of OAuth2 and JWT technologies with Forgerock. Maintained a team-wide library
+           containing common system functionalities. Implemented an API management system featuring sandbox/business
+           functionalities and a cost calculator for business plans.
+
+          Placed a strong emphasis on system monitoring using Jaeger, Prometheus with Grafana, and Kibana. Provided
+           automated API documentation using Swagger, generated from Scala code and Scala doc. Designed database schemas
+           in Cassandra with a focus on performance and data integrity.
+
+          Primarily coded in Scala with an emphasis on effective functional programming to ensure clean, readable, and
+           maintainable code.
+          
+          
+        </p>
+        <ul class="achievements">
+          <li>Mastered how to manage and design a microservice system in Kubernetes</li>
+          <li>Improved observability of the system with Prometheus and Grafana</li>
+          <li>Mastered how to design a non blocking reactive application</li>
+        </ul>
+        <p class="stack">Stack: Scala, Java, Rust, Kafka, Cassandra, PostgreSQL, Akka/Pekko, Kubernetes, Docker, Helm, Kustomize, Terraform, OpenTofu, Prometheus, Grafana.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Java Developer, Consultant</h3>
+          <p class="org">H&#8209;Farm S.p.A., Italy</p>
+          <p class="when"><time datetime="2017">2017</time> &ndash; <time datetime="2021">2021</time></p>
+        </div>
+        <p class="summary">
+          Consultant embedded in the R&amp;D unit of a multinational fintech client, on the front banking
+          product line, plus a second engagement for a small enterprise customer.
+        </p>
+        <ul class="achievements">
+          <li>Implemented the financial product catalogue and the financial position portfolio modules of the
+            client's front banking suite, working inside an OSGi codebase where backward compatibility across
+            released versions was a hard constraint.</li>
+          <li>Built and maintained a license management portal for an enterprise customer, from the JHipster
+            baseline through to the React front end and the schema migrations behind it.</li>
+        </ul>
+        <p class="stack">Stack: Java, OSGi, bnd, WebSphere, Tomcat, EclipseLink, Hibernate, Spring, Liquibase,
+          PostgreSQL, Oracle Database, Jenkins, TypeScript, React.</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Backend Developer</h3>
+          <p class="org">Nextep S.r.l., Italy</p>
+          <p class="when"><time datetime="2016">2016</time> &ndash; <time datetime="2017">2017</time></p>
+        </div>
+        <p class="summary">
+          First professional role, on a small team building and maintaining backend services.
+        </p>
+        <ul class="achievements">
+          <li>Developed and maintained backend applications in Scala and Java on Play Framework and Spring,
+            backed by MongoDB.</li>
+        </ul>
+        <p class="stack">Stack: Scala, Play Framework, Java, Spring, MongoDB.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <dl class="skills">
+        <div>
+          <dt>Languages</dt>
+          <dd>Java, Scala, TypeScript, SQL, Rust</dd>
+        </div>
+        <div>
+          <dt>Backend</dt>
+          <dd>Akka, Pekko, Spring, Play Framework, JPA and Hibernate</dd>
+        </div>
+        <div>
+          <dt>Data</dt>
+          <dd>PostgreSQL, Oracle Database, MongoDB, Liquibase</dd>
+        </div>
+        <div>
+          <dt>Platform</dt>
+          <dd>Docker, Kubernetes, Terraform, OpenTofu, GitHub Actions, AWS</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="section" aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>BSc in Computer Science</h3>
+          <p class="org">University of Padua</p>
+          <p class="when"><time datetime="2011-10">2011</time> &ndash; <time datetime="2016-04">2016</time></p>
         </div>
       </div>
-      <hr />
-      <div class="resume-body">
-        <div class="row">
-          <div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
-            <section class="work-section py-3">
-              <h3 class="text-uppercase resume-section-heading mb-4">Work Experience</h3>
+    </section>
 
-              <div class="item mb-3">
-                <div class="item-heading row align-items-center mb-2">
-                  <h4 class="item-title col-12 col-md-6 col-lg-6 mb-2 mb-md-0">Java developer</h4>
-                  <div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left text-md-right">H-Farm S.p.a. Italy | 2017 - Present</div>
-                </div>
-                <div class="item-content">
-                  <p>Consultant for R&D unit of multinational client operating in Fintech. Responsible for the
-                    implementation of financial product catalogue module and financial position portfolio module, part
-                    of the company's front banking software offering. I have matured the skills to maintain product 
-                    software and backward compatibility and to work within a team.</p>
-                  <ul class="resume-list">
-                    <li>Java</li>
-                    <li>Bndtools</li>
-                    <li>OSGi</li>
-                    <li>WebSphere</li>
-                    <li>Tomcat</li>
-                    <li>Jenkins</li>
-                    <li>EclipseLink</li>
-                    <li>Liquibase</li>
-                    <li>PostgreSQL</li>
-                    <li>OracleDB</li>
-                  </ul>
-                </div>
-                <div class="item-content">
-                  <p>Consultant for a customer representing a medium-small company in wich I had to develop and mantain a license management portal done with JHipster.</p>
-                  <ul class="resume-list">
-                    <li>Java</li>
-                    <li>Spring</li>
-                    <li>Hibernate</li>
-                    <li>Liquibase</li>
-                    <li>PostgreSQL</li>
-                    <li>TypeScript</li>
-                    <li>React</li>
-                  </ul>
-                </div>
-              </div>
+    <section class="section" aria-labelledby="languages">
+      <h2 id="languages">Languages</h2>
+      <ul class="inline-list">
+        <li>Italian <span class="muted">(native)</span></li>
+        <li>English <span class="muted">(professional)</span></li>
+      </ul>
+    </section>
 
-              <div class="item mb-3">
-                <div class="item-heading row align-items-center mb-2">
-                  <h4 class="item-title col-12 col-md-6 col-lg-6 mb-2 mb-md-0">Java developer</h4>
-                  <div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left text-md-right">Nextep S.r.l. Italy | 2016 - 2017</div>
-                </div>
-                <div class="item-content">
-                  <p>Realization and maintain of backend applications, realized in Scala and Java with the use of Play Framework.</p>
-                  <ul class="resume-list">
-                    <li>Scala</li>
-                    <li>Play Framework</li>
-                    <li>Java</li>
-                    <li>Spring</li>
-                    <li>MongoDB</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
+  </article>
 
-            <section class="work-section py-3">
-              <h3 class="text-uppercase resume-section-heading mb-4">University projects</h3>
-
-              <div class="item mb-3">
-                <div class="item-heading row align-items-center mb-2">
-                  <h4 class="item-title col-12 col-md-6 col-lg-6 mb-2 mb-md-0">Software engineering</h4>
-                  <div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left text-md-right">University Of Padua | Nov 2014 - May 2015</div>
-                </div>
-                <div class="item-content">
-                  <p>
-                    Realization of an android-based smartwatch application and a spring-based cloud application. In this project I followed 
-                    each part of analysis, design, development and testing following the incremental model methodology. I also had to 
-                    take care of the planning of all the activities of the team due to the constraint of the duration of the project. 
-                    I developed the ability to write well-defined requirements that reflect the client's needs and also design 
-                    the general and detailed architecture.
-                  </p>
-                  <ul class="resume-list">
-                    <li>Incremental Model Methodology</li>
-                    <li>UML Diagrams</li>
-                    <li>Java</li>
-                    <li>Android</li>
-                    <li>HTML5</li>
-                    <li>CSS</li>
-                    <li>MySQL and SQLite</li>
-                    <li>Spring Framework</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="item mb-3">
-                <div class="item-heading row align-items-center mb-2">
-                  <h4 class="item-title col-12 col-md-6 col-lg-6 mb-2 mb-md-0">Databases</h4>
-                  <div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left text-md-right">University Of Padua | Sep 2014</div>
-                </div>
-                <div class="item-content">
-                  <p>Development of a database and related web interface to interact with it. A particular emphasis has been placed on modeling a database of a complex reality in order to familiarize with all types of relationships between data, constraints and especially complex queries.</p>
-                  <ul class="resume-list">
-                    <li>SQL</li>
-                    <li>ER modeling</li>
-                    <li>MySQL</li>
-                    <li>PHP</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="item mb-3">
-                <div class="item-heading row align-items-center mb-2">
-                  <h4 class="item-title col-12 col-md-6 col-lg-6 mb-2 mb-md-0">Web technologies</h4>
-                  <div class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left text-md-right">University Of Padua | Jun 2014</div>
-                </div>
-                <div class="item-content">
-                  <p>Development of a website, the main focus was to use the most important web technologies to create a website that complies with usability and accessibility standards. The site provides dynamic pages generated with a backend written in Perl, the information is stored in XML format according to a schema defined in XMLS, XPath was used to query these files.</p>
-                  <ul class="resume-list">
-                    <li>HTML4</li>
-                    <li>CSS</li>
-                    <li>WCAG</li>
-                    <li>Perl</li>
-                    <li>XML, XMLS, XSLT and XPath</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          <aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
-            <section class="education-section py-3">
-              <h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
-              <ul class="list-unstyled resume-education-list">
-                <li class="mb-3">
-                  <div class="resume-degree font-weight-bold">Bachelor degree in Computer Science</div>
-                  <div class="resume-degree-org text-muted">University of Padua</div>
-                  <div class="resume-degree-time text-muted">Oct 2011 - Apr 2016</div>
-                </li>
-              </ul>
-            </section>
-            <section class="skills-section py-3">
-              <h3 class="text-uppercase resume-section-heading mb-4">Languages</h3>
-              <ul class="list-unstyled resume-lang-list">
-                  <li class="mb-2">Italian <span class="text-muted">(Native)</span></li>
-                  <li class="mb-2">English <span class="text-muted">(Professional)</span></li>
-              </ul>
-            </section>
-            <section class="skills-section py-3">
-
-              <h3 class="text-uppercase resume-section-heading mb-4">Interests</h3>
-
-              <ul class="list-unstyled resume-interests-list mb-0">
-                  <li class="mb-2">Music</li>
-                  <li class="mb-2">Travelling</li>
-                  <li class="mb-2">Technology</li>
-              </ul>
-            </section>
-          </aside>
-        </div>
-      </div>
-      <hr />
-      <footer class="resume-footer"></footer>
-    </article>
-  </div>
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://andeliero.github.io/",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Alberto Andeliero",
+      "givenName": "Alberto",
+      "familyName": "Andeliero",
+      "jobTitle": "Backend Engineer",
+      "email": "mailto:andeliero92@gmail.com",
+      "image": "https://andeliero.github.io/photo.jpg",
+      "url": "https://andeliero.github.io/",
+      "sameAs": [
+        "https://linkedin.com/in/alberto-andeliero",
+        "https://github.com/andeliero"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Padua",
+        "addressCountry": "IT"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Padua",
+        "sameAs": "https://www.unipd.it/"
+      },
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Italian" },
+        { "@type": "Language", "name": "English" }
+      ],
+      "knowsAbout": ["Java", "Scala", "Backend development", "Distributed systems", "PostgreSQL"]
+    }
+  }
+  </script>
 </body>
 
 </html>
