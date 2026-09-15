@@ -1,0 +1,47 @@
+name: Build CV PDF
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'index.html'
+      - 'style.css'
+      - 'photo.*'
+      - 'scripts/build-pdf.mjs'
+      - '.github/workflows/cv-pdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cv-pdf
+  cancel-in-progress: true
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install headless Chrome
+        run: npm install --no-save puppeteer
+
+      - name: Render cv.pdf
+        run: node scripts/build-pdf.mjs
+
+      - name: Commit the refreshed PDF
+        run: |
+          if [ -z "$(git status --porcelain cv.pdf)" ]; then
+            echo "cv.pdf unchanged, nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cv.pdf
+          git commit -m "Rebuild cv.pdf [skip ci]"
+          git push

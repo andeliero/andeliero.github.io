@@ -1,0 +1,373 @@
+/* Alberto Andeliero, curriculum vitae.
+   Hand written, no framework, no build step. Screen and print share one source. */
+
+/* ---------- Design tokens ---------- */
+
+:root {
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --fg: #1a1c1f;
+  --muted: #5f636b;
+  --rule: #e4e0d7;
+  --accent: #0f6b4f;
+  --flag-bg: #fff6d6;
+  --flag-edge: #d9a400;
+
+  --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+
+  --measure: 46rem;
+  --step-0: clamp(0.95rem, 0.9rem + 0.2vw, 1.02rem);
+  --step-1: clamp(1.05rem, 1rem + 0.3vw, 1.18rem);
+  --step-name: clamp(2rem, 1.4rem + 2.6vw, 3rem);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --surface: #191c21;
+    --fg: #e8e6e1;
+    --muted: #9aa1aa;
+    --rule: #2b2f36;
+    --accent: #5ec49b;
+    --flag-bg: #2e2a17;
+    --flag-edge: #b78d1a;
+  }
+}
+
+/* ---------- Base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+p { margin: 0 0 0.75rem; }
+p:last-child { margin-bottom: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+a {
+  color: inherit;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover { color: var(--accent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.muted { color: var(--muted); }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 10;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------- Page frame ---------- */
+
+.cv {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 2rem) 4rem;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  align-items: start;
+}
+
+.portrait {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.03);
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-name);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  margin: 0.35rem 0 0.9rem;
+  color: var(--accent);
+  font-size: var(--step-1);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.pitch { max-width: 34rem; }
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.contacts li { display: flex; align-items: center; gap: 1rem; }
+.contacts li:not(:last-child)::after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--rule);
+}
+
+@media screen and (max-width: 34rem) {
+  .masthead { grid-template-columns: 1fr; }
+  .contacts li::after { display: none; }
+  .contacts { flex-direction: column; }
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0 2rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.section h2 {
+  margin: 0.2rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section > :not(h2) { grid-column: 2; }
+
+@media screen and (max-width: 46rem) {
+  .section { grid-template-columns: 1fr; }
+  .section > :not(h2) { grid-column: 1; }
+  .section h2 { margin-bottom: 1rem; }
+}
+
+/* ---------- Entries ---------- */
+
+.entry + .entry {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.entry-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  column-gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.entry-head h3 {
+  grid-column: 1;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.entry-head .when {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.entry-head .org {
+  grid-column: 1;
+  margin: 0.1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+@media screen and (max-width: 30rem) {
+  .entry-head { grid-template-columns: 1fr; }
+  .entry-head .when { grid-column: 1; grid-row: auto; margin-top: 0.2rem; }
+}
+
+.summary { color: var(--fg); }
+
+.achievements { margin: 0.75rem 0 0; }
+
+.achievements li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievements li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.45rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.stack {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ---------- Skills ---------- */
+
+.skills { margin: 0; display: grid; gap: 0.75rem; }
+
+.skills > div {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 0 1rem;
+}
+
+.skills dt {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding-top: 0.1rem;
+}
+
+.skills dd { margin: 0; }
+
+@media screen and (max-width: 30rem) {
+  .skills > div { grid-template-columns: 1fr; }
+}
+
+.inline-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+}
+
+/* ---------- Placeholders to fill in ---------- */
+
+.todo {
+  background: var(--flag-bg);
+  box-shadow: inset 2px 0 0 var(--flag-edge);
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  color: var(--fg);
+}
+
+.todo::before {
+  content: "TO FILL IN: ";
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--flag-edge);
+}
+
+li.todo, p.todo, dd.todo { display: block; }
+
+/* ---------- Colophon ---------- */
+
+.colophon {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ---------- Print, A4 ---------- */
+
+@page {
+  size: A4;
+  margin: 15mm 16mm;
+}
+
+@media print {
+  :root {
+    --bg: #fff;
+    --surface: #fff;
+    --fg: #000;
+    --muted: #444;
+    --rule: #ccc;
+    --accent: #0f6b4f;
+  }
+
+  body { font-size: 10pt; line-height: 1.45; }
+
+  .cv { max-width: none; margin: 0; padding: 0; }
+
+  /* !important because .contacts li sets display: flex at equal specificity */
+  .skip-link,
+  .print-hide,
+  .colophon { display: none !important; }
+
+  a { text-decoration: none; }
+
+  .portrait { width: 22mm; height: 22mm; }
+
+  .section {
+    margin-top: 6mm;
+    padding-top: 4mm;
+    grid-template-columns: 30mm 1fr;
+    gap: 0 6mm;
+  }
+
+  .entry,
+  .entry-head,
+  .skills > div,
+  .achievements li { break-inside: avoid; }
+
+  .entry + .entry { margin-top: 5mm; padding-top: 4mm; }
+
+  h1, h2, h3 { break-after: avoid; }
+
+  /* Placeholders stay visible on paper on purpose: a PDF should never
+     ship with invisible filler text still in it. */
+  .todo { box-shadow: inset 2px 0 0 #999; background: #f2f2f2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
