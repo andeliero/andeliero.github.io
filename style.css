@@ -344,12 +344,22 @@ li.todo, p.todo, dd.todo { display: block; }
 
   .portrait { width: 22mm; height: 22mm; }
 
+  /* Block flow, not grid: Chrome fragments a grid container across printed
+     pages badly and spills a nearly empty extra page. A float keeps the side
+     heading and still breaks cleanly. */
   .section {
+    display: block;
     margin-top: 6mm;
     padding-top: 4mm;
-    grid-template-columns: 30mm 1fr;
-    gap: 0 6mm;
   }
+
+  .section h2 {
+    float: left;
+    width: 26mm;
+    margin: 0.5mm 0 0;
+  }
+
+  .section > :not(h2) { margin-left: 32mm; }
 
   .entry,
   .entry-head,

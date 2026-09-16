@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alberto Andeliero, Software Engineer</title>
   <meta name="description"
-    content="CV vitae of Alberto Andeliero, Software Engineer">
+    content="Alberto Andeliero, software engineer in Rotterdam. Backend and cloud systems for connected devices: event driven data platforms, public APIs, AWS and Kubernetes.">
   <meta name="author" content="Alberto Andeliero">
   <link rel="canonical" href="https://andeliero.github.io/">
 
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Alberto Andeliero, Software Engineer">
   <meta property="og:description"
-    content="Java and Scala services for finance and banking, distributed systems and system integration.">
+    content="Backend and cloud systems for connected devices: event driven data platforms, public APIs, AWS and Kubernetes.">
   <meta property="og:url" content="https://andeliero.github.io/">
   <meta property="og:image" content="https://andeliero.github.io/photo.jpg">
   <meta property="profile:first_name" content="Alberto">
@@ -42,14 +42,16 @@
       <div class="identity">
         <h1>Alberto Andeliero</h1>
         <p class="role">Software Engineer</p>
-        <!-- <p class="pitch">
-          Tackle problems 
-        </p> -->
+        <p class="pitch">
+          I build backend systems for connected devices at scale: event driven ingestion from equipment in the
+          field, the public APIs on top of it, and the AWS and Kubernetes infrastructure underneath. I am used to
+          owning a service from product requirements through to production and on call.
+        </p>
         <ul class="contacts">
           <li><a href="mailto:andeliero92@gmail.com">andeliero92@gmail.com</a></li>
           <li><a href="https://linkedin.com/in/alberto-andeliero" rel="me">linkedin.com/in/alberto-andeliero</a></li>
           <li><a href="https://github.com/andeliero" rel="me">github.com/andeliero</a></li>
-          <li>Rotterdam, The Netherlands</li>
+          <li>Rotterdam, The Netherlands <span class="muted">(open to relocation to Italy)</span></li>
           <li class="print-hide"><a href="cv.pdf" download>Download PDF</a></li>
         </ul>
       </div>
@@ -65,30 +67,30 @@
           <p class="when"><time datetime="2021">2021</time> &ndash; Present</p>
         </div>
         <p class="summary">
-          Developed a data processing platform that leverages microservices and APIs to expose various data from Audi
-           vehicles and includes a GDPR consent engine to manage drivers' privacy preferences.
-          Applied best practices for CI/CD, application containerization, and deployment, as well as managed cluster
-           configuration using Helm and Kustomize.
-
-          Possess a strong understanding of OAuth2 and JWT technologies with Forgerock. Maintained a team-wide library
-           containing common system functionalities. Implemented an API management system featuring sandbox/business
-           functionalities and a cost calculator for business plans.
-
-          Placed a strong emphasis on system monitoring using Jaeger, Prometheus with Grafana, and Kibana. Provided
-           automated API documentation using Swagger, generated from Scala code and Scala doc. Designed database schemas
-           in Cassandra with a focus on performance and data integrity.
-
-          Primarily coded in Scala with an emphasis on effective functional programming to ensure clean, readable, and
-           maintainable code.
-          
-          
+          Connected vehicle data platform for Audi: telemetry and vehicle data arriving from cars in the field,
+          processed by non blocking reactive microservices on AWS, and exposed to internal teams and third party
+          consumers through public APIs. I also maintain the shared library the team's services are built on.
         </p>
         <ul class="achievements">
-          <li>Mastered how to manage and design a microservice system in Kubernetes</li>
-          <li>Improved observability of the system with Prometheus and Grafana</li>
-          <li>Mastered how to design a non blocking reactive application</li>
+          <li>Built the event driven ingestion and processing services on Kafka, with Cassandra schemas designed
+            around write throughput and data integrity.<span class="todo">Add scale here: how many vehicles,
+              events per second, or API calls per day. For this posting a number is worth more than any
+              technology name.</span></li>
+          <li>Designed and shipped an API management layer with sandbox and commercial tiers, cost calculation
+            for business plans, OAuth2 and JWT through ForgeRock, and OpenAPI documentation generated from the
+            Scala sources.</li>
+          <li>Built a GDPR consent engine governing what each driver's data may be used for, enforced across
+            every downstream consumer of the platform.</li>
+          <li>Ran the platform on AWS and Kubernetes: Helm and Kustomize for cluster configuration, Terraform and
+            OpenTofu for infrastructure, and CI/CD pipelines covering build, test and deployment.<span
+              class="todo">Name the AWS services you actually worked with. The posting asks for CloudFront, WAF,
+              ELB, Lambda, RDS, Redis and API Gateway by name, and this is the highest value edit left on the
+              page.</span></li>
+          <li>Instrumented the platform end to end with Jaeger tracing, Prometheus and Grafana metrics and Kibana
+            logs, so a failing service could be isolated quickly during an incident.</li>
         </ul>
-        <p class="stack">Stack: Scala, Java, Rust, Kafka, Cassandra, PostgreSQL, Akka/Pekko, Kubernetes, Docker, Helm, Kustomize, Terraform, OpenTofu, Prometheus, Grafana.</p>
+        <p class="stack">Stack: Scala, Java, Rust, Kafka, Cassandra, PostgreSQL, Akka and Pekko, AWS, Kubernetes,
+          Docker, Helm, Kustomize, Terraform, OpenTofu, Prometheus, Grafana, Jaeger.</p>
       </div>
 
       <div class="entry">
@@ -98,18 +100,21 @@
           <p class="when"><time datetime="2017">2017</time> &ndash; <time datetime="2021">2021</time></p>
         </div>
         <p class="summary">
-          Consultant embedded in the R&amp;D unit of a multinational fintech client, on the front banking
-          product line, plus a second engagement for a small enterprise customer.
+          Consultant embedded in the R&amp;D unit of a multinational fintech client, on a product line shipped to
+          banking customers, plus a second engagement for a small enterprise customer.
         </p>
         <ul class="achievements">
-          <li>Implemented the financial product catalogue and the financial position portfolio modules of the
-            client's front banking suite, working inside an OSGi codebase where backward compatibility across
+          <li>Turned product requirements into use cases and working software for the financial product catalogue
+            and financial position portfolio modules, inside an OSGi codebase where backward compatibility across
             released versions was a hard constraint.</li>
+          <li>Worked with RabbitMQ for asynchronous messaging between services.<span class="todo">One line on
+              what actually flowed over it, and at what rate. This is the closest thing you have to the MQTT
+              requirement, so it pays to be concrete rather than to list the broker and move on.</span></li>
           <li>Built and maintained a license management portal for an enterprise customer, from the JHipster
             baseline through to the React front end and the schema migrations behind it.</li>
         </ul>
-        <p class="stack">Stack: Java, OSGi, bnd, WebSphere, Tomcat, EclipseLink, Hibernate, Spring, Liquibase,
-          PostgreSQL, Oracle Database, Jenkins, TypeScript, React.</p>
+        <p class="stack">Stack: Java, OSGi, bnd, RabbitMQ, WebSphere, Tomcat, EclipseLink, Hibernate, Spring,
+          Liquibase, PostgreSQL, Oracle Database, Jenkins, TypeScript, React.</p>
       </div>
 
       <div class="entry">
@@ -137,16 +142,29 @@
           <dd>Java, Scala, TypeScript, SQL, Rust</dd>
         </div>
         <div>
-          <dt>Backend</dt>
-          <dd>Akka, Pekko, Spring, Play Framework, JPA and Hibernate</dd>
+          <dt>Backend and APIs</dt>
+          <dd>REST and OpenAPI, Akka and Pekko, Spring, Play Framework, JPA and Hibernate, OAuth2 and JWT</dd>
+        </div>
+        <div>
+          <dt>Messaging</dt>
+          <dd>Kafka, RabbitMQ</dd>
         </div>
         <div>
           <dt>Data</dt>
-          <dd>PostgreSQL, Oracle Database, MongoDB, Liquibase</dd>
+          <dd>PostgreSQL, Oracle Database, Cassandra, MongoDB, Liquibase</dd>
         </div>
         <div>
-          <dt>Platform</dt>
-          <dd>Docker, Kubernetes, Terraform, OpenTofu, GitHub Actions, AWS</dd>
+          <dt>Cloud and platform</dt>
+          <dd>AWS, Docker, Kubernetes, Helm, Kustomize, Terraform, OpenTofu, GitHub Actions</dd>
+        </div>
+        <div>
+          <dt>Observability</dt>
+          <dd>Prometheus, Grafana, Jaeger, Kibana</dd>
+        </div>
+        <div>
+          <dt>Testing</dt>
+          <dd class="todo">Name your frameworks. The posting asks for unit and integration tests explicitly and
+            names JUnit5, so ScalaTest, JUnit5, Testcontainers or whatever you actually reach for belongs here.</dd>
         </div>
       </dl>
     </section>
@@ -182,7 +200,7 @@
       "name": "Alberto Andeliero",
       "givenName": "Alberto",
       "familyName": "Andeliero",
-      "jobTitle": "Backend Engineer",
+      "jobTitle": "Software Engineer",
       "email": "mailto:andeliero92@gmail.com",
       "image": "https://andeliero.github.io/photo.jpg",
       "url": "https://andeliero.github.io/",
@@ -192,8 +210,8 @@
       ],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Padua",
-        "addressCountry": "IT"
+        "addressLocality": "Rotterdam",
+        "addressCountry": "NL"
       },
       "alumniOf": {
         "@type": "CollegeOrUniversity",
@@ -204,7 +222,8 @@
         { "@type": "Language", "name": "Italian" },
         { "@type": "Language", "name": "English" }
       ],
-      "knowsAbout": ["Java", "Scala", "Backend development", "Distributed systems", "PostgreSQL"]
+      "knowsAbout": ["Backend development", "Distributed systems", "Event driven architecture",
+        "Kafka", "AWS", "Kubernetes", "REST APIs", "Scala", "Java", "Cassandra"]
     }
   }
   </script>
